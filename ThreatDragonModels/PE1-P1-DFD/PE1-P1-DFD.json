@@ -226,6 +226,75 @@
           },
           {
             "position": {
+              "x": 771,
+              "y": 6
+            },
+            "size": {
+              "width": 150,
+              "height": 120
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "1c097738-111b-492b-abff-2fc16f642199",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            },
+            "zIndex": -1
+          },
+          {
+            "position": {
+              "x": 759,
+              "y": -251
+            },
+            "size": {
+              "width": 170,
+              "height": 100
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "c5118681-2f19-443f-9f27-7fba8a5c92f9",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            },
+            "zIndex": -1
+          },
+          {
+            "position": {
+              "x": 1326,
+              "y": 26
+            },
+            "size": {
+              "width": 180,
+              "height": 80
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "c804ea11-6da5-4136-8398-1b38f36e892a",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            },
+            "zIndex": -1
+          },
+          {
+            "position": {
               "x": -630,
               "y": -560
             },
@@ -1933,7 +2002,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Barista"
+                "text": "Manager"
               },
               "body": {
                 "stroke": "#333333",
@@ -2028,7 +2097,7 @@
             "id": "7ffbdb57-1812-44d0-9600-4d783449975f",
             "data": {
               "type": "tm.Actor",
-              "name": "Barista",
+              "name": "Manager",
               "description": "client, frontend component",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -2278,14 +2347,7 @@
               "storesInventory": false,
               "threats": []
             },
-            "zIndex": 27,
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
-            }
+            "zIndex": 27
           },
           {
             "position": {
@@ -2330,7 +2392,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "2.1. Barista logs into the staff interface and \nrequests to view incoming orders from the\nWeb Application Server",
+              "name": "3.1. Manager logs into the staff interface and \nrequests to view basic sales reports from\nthe Web Application Server.",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2344,7 +2406,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "2.1. Barista logs into the staff interface and \nrequests to view incoming orders from the\nWeb Application Server"
+              "3.1. Manager logs into the staff interface and \nrequests to view basic sales reports from\nthe Web Application Server."
             ],
             "id": "8bc16aa1-caf7-4337-90c3-2f144858bfa1",
             "source": {
@@ -2386,7 +2448,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "2.4. Web Application Server sends \nthe order list to the Barista for display",
+              "name": "3.4. Web Application Server processes the sales \ndata (e.g., calculates totals, formats for display) \nand sends it as a response to the Manager",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2400,7 +2462,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "2.4. Web Application Server sends \nthe order list to the Barista for display"
+              "3.4. Web Application Server processes the sales \ndata (e.g., calculates totals, formats for display) \nand sends it as a response to the Manager"
             ],
             "id": "f668efc1-26df-4b96-b1be-ae9fab03ecae",
             "source": {
@@ -2438,7 +2500,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "2.2. Web Application Server authenticates and \nauthorizes the Barista, then queries the MongoDB \nDatabase for relevant order data",
+              "name": "3.2. Web Application Server authenticates and authorizes the Manager, \nthen queries the MongoDB Database for aggregated sales data.",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2452,7 +2514,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "2.2. Web Application Server authenticates and \nauthorizes the Barista, then queries the MongoDB \nDatabase for relevant order data"
+              "3.2. Web Application Server authenticates and authorizes the Manager, \nthen queries the MongoDB Database for aggregated sales data."
             ],
             "id": "dd9d2441-2806-48d5-8862-fd996ce0a5bc",
             "source": {
@@ -2490,6 +2552,715 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
+              "name": "3.3. MongoDB Database retrieves the requested \nsales data and sends it back to the\nWeb Application Server.",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "3.3. MongoDB Database retrieves the requested \nsales data and sends it back to the\nWeb Application Server."
+            ],
+            "id": "843ae69c-9e18-477c-a7a0-29e7994f3b11",
+            "source": {
+              "cell": "fb04f172-cf06-4c12-9422-6aaed63c06ce",
+              "port": "09476e71-8c8a-4077-ada3-846ad7ad76b5"
+            },
+            "target": {
+              "cell": "ae68def4-1f49-4429-b556-35e80dededbc",
+              "port": "903d037e-f73b-42c1-8d55-5553e5128e8f"
+            },
+            "vertices": [],
+            "zIndex": 32
+          },
+          {
+            "position": {
+              "x": 806,
+              "y": 36
+            },
+            "size": {
+              "width": 80,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Web App"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "cf4fb948-2be5-4e02-8977-9de46c1e0e71"
+                },
+                {
+                  "group": "right",
+                  "id": "09476e71-8c8a-4077-ada3-846ad7ad76b5"
+                },
+                {
+                  "group": "bottom",
+                  "id": "d61d7697-2a27-4189-9b43-5f68a7d74b09"
+                },
+                {
+                  "group": "left",
+                  "id": "630d6de4-cba0-4f82-9418-163f66daedb5"
+                }
+              ]
+            },
+            "id": "c56f65c9-ee45-40b3-9599-bea7c64907cf",
+            "data": {
+              "type": "tm.Process",
+              "name": "Web App",
+              "description": "web server backend component",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            },
+            "zIndex": 35
+          },
+          {
+            "position": {
+              "x": 286,
+              "y": 36
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Administrator"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "fc949fef-73b8-45c9-982d-60afe7f9bd8d"
+                },
+                {
+                  "group": "right",
+                  "id": "71cd73ba-ff3d-4eed-8799-684a1681f6fa"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5ced8af7-5ca2-4a85-b427-fe73143ea8fe"
+                },
+                {
+                  "group": "left",
+                  "id": "a3a51259-16d5-4cb7-abeb-f66951aae6c1"
+                }
+              ]
+            },
+            "id": "32a9026d-bcb9-41cb-a9a8-7ff7c5b85de2",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Administrator",
+              "description": "client, frontend component",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            },
+            "zIndex": 36
+          },
+          {
+            "position": {
+              "x": 789.75,
+              "y": -231
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Authorization\nProvider"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "fc949fef-73b8-45c9-982d-60afe7f9bd8d"
+                },
+                {
+                  "group": "right",
+                  "id": "71cd73ba-ff3d-4eed-8799-684a1681f6fa"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5ced8af7-5ca2-4a85-b427-fe73143ea8fe"
+                },
+                {
+                  "group": "left",
+                  "id": "a3a51259-16d5-4cb7-abeb-f66951aae6c1"
+                }
+              ]
+            },
+            "id": "2dc1e91a-0063-46bb-9314-033099af559f",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Authorization\nProvider",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            },
+            "zIndex": 37
+          },
+          {
+            "position": {
+              "x": 1357,
+              "y": 36
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "MongoDB\nDatabase"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "e9d2e14b-a4d9-476e-b847-3977be0e11ac"
+                },
+                {
+                  "group": "right",
+                  "id": "553e9889-7ba8-4170-a0e6-206e278972e4"
+                },
+                {
+                  "group": "bottom",
+                  "id": "0d7a78bc-124c-44eb-b99d-1552b0bb3577"
+                },
+                {
+                  "group": "left",
+                  "id": "903d037e-f73b-42c1-8d55-5553e5128e8f"
+                }
+              ]
+            },
+            "id": "ae52b16a-3c39-46d8-abe5-9e7ace2968af",
+            "data": {
+              "type": "tm.Store",
+              "name": "MongoDB\nDatabase",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            },
+            "zIndex": 38
+          },
+          {
+            "position": {
+              "x": 342,
+              "y": -315
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "5.2.4 ADMINISTRATOR ADDS NEW MENU ITEM"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "7f702197-1da7-4e81-b4c1-4b3aeee5c116",
+            "data": {
+              "type": "tm.Text",
+              "name": "5.2.4 ADMINISTRATOR ADDS NEW MENU ITEM",
+              "hasOpenThreats": false
+            },
+            "zIndex": 39
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "4.2. Administrator inputs details for a new menu \nitem (name, description, price, etc.) and submits \nthe information to the Web Application Server",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "4.2. Administrator inputs details for a new menu \nitem (name, description, price, etc.) and submits \nthe information to the Web Application Server"
+            ],
+            "id": "6fba4092-6d80-46a4-8ec5-ac9fc4ef7eb4",
+            "source": {
+              "cell": "32a9026d-bcb9-41cb-a9a8-7ff7c5b85de2",
+              "port": "71cd73ba-ff3d-4eed-8799-684a1681f6fa"
+            },
+            "target": {
+              "cell": "c56f65c9-ee45-40b3-9599-bea7c64907cf",
+              "port": "630d6de4-cba0-4f82-9418-163f66daedb5"
+            },
+            "vertices": [
+              {
+                "x": 606,
+                "y": 16
+              },
+              {
+                "x": 634,
+                "y": 16
+              }
+            ],
+            "zIndex": 40
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2.4. Web Application Server sends \nthe order list to the Barista for display",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "2.4. Web Application Server sends \nthe order list to the Barista for display"
+            ],
+            "id": "bb93763d-7f8e-4fbf-afb6-344904f3675e",
+            "source": {
+              "cell": "c56f65c9-ee45-40b3-9599-bea7c64907cf",
+              "port": "630d6de4-cba0-4f82-9418-163f66daedb5"
+            },
+            "target": {
+              "cell": "32a9026d-bcb9-41cb-a9a8-7ff7c5b85de2",
+              "port": "71cd73ba-ff3d-4eed-8799-684a1681f6fa"
+            },
+            "vertices": [
+              {
+                "x": 616,
+                "y": 106
+              }
+            ],
+            "zIndex": 41
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2.2. Web Application Server authenticates and \nauthorizes the Barista, then queries the MongoDB \nDatabase for relevant order data",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "2.2. Web Application Server authenticates and \nauthorizes the Barista, then queries the MongoDB \nDatabase for relevant order data"
+            ],
+            "id": "62ac573b-2980-4e08-a748-adcc3889e983",
+            "source": {
+              "cell": "2dc1e91a-0063-46bb-9314-033099af559f",
+              "port": "5ced8af7-5ca2-4a85-b427-fe73143ea8fe"
+            },
+            "target": {
+              "cell": "c56f65c9-ee45-40b3-9599-bea7c64907cf",
+              "port": "cf4fb948-2be5-4e02-8977-9de46c1e0e71"
+            },
+            "vertices": [
+              {
+                "x": 846,
+                "y": -66
+              }
+            ],
+            "zIndex": 42
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
               "name": "2.3. MongoDB Database retrieves the pending \norder data and sends it to the Web Application Server.",
               "description": "",
               "outOfScope": false,
@@ -2506,17 +3277,17 @@
             "labels": [
               "2.3. MongoDB Database retrieves the pending \norder data and sends it to the Web Application Server."
             ],
-            "id": "843ae69c-9e18-477c-a7a0-29e7994f3b11",
+            "id": "42f41060-34d2-4e4d-b06f-c62ff44a0f35",
             "source": {
-              "cell": "fb04f172-cf06-4c12-9422-6aaed63c06ce",
+              "cell": "c56f65c9-ee45-40b3-9599-bea7c64907cf",
               "port": "09476e71-8c8a-4077-ada3-846ad7ad76b5"
             },
             "target": {
-              "cell": "ae68def4-1f49-4429-b556-35e80dededbc",
+              "cell": "ae52b16a-3c39-46d8-abe5-9e7ace2968af",
               "port": "903d037e-f73b-42c1-8d55-5553e5128e8f"
             },
             "vertices": [],
-            "zIndex": 32
+            "zIndex": 43
           },
           {
             "shape": "flow",
@@ -2553,26 +3324,26 @@
             "labels": [
               "2.7. Web Application Server validates the \nstatus update and updates the order record\nin the MongoDB Database"
             ],
-            "id": "8bf17e87-91d2-4b30-b19b-3192a991b8c3",
+            "id": "8d475bb1-9790-4a0b-a12a-aa580b61981d",
             "source": {
-              "cell": "fb04f172-cf06-4c12-9422-6aaed63c06ce",
+              "cell": "c56f65c9-ee45-40b3-9599-bea7c64907cf",
               "port": "d61d7697-2a27-4189-9b43-5f68a7d74b09"
             },
             "target": {
-              "cell": "ae68def4-1f49-4429-b556-35e80dededbc",
+              "cell": "ae52b16a-3c39-46d8-abe5-9e7ace2968af",
               "port": "0d7a78bc-124c-44eb-b99d-1552b0bb3577"
             },
             "vertices": [
               {
-                "x": 1062,
-                "y": -458
+                "x": 1064,
+                "y": 144
               },
               {
-                "x": 1352,
-                "y": -458
+                "x": 1354,
+                "y": 144
               }
             ],
-            "zIndex": 34
+            "zIndex": 44
           }
         ],
         "description": "DFD and Threat Identification using STRIDE"
