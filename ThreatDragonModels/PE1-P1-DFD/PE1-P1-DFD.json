@@ -1,0 +1,16 @@
+{
+  "version": "2.6.0",
+  "summary": {
+    "title": "PE1-P1-DFD",
+    "owner": "Rachel Lauren Manlapig",
+    "description": "Data Flow Diagrams and Threat Identification using STRIDE\n\nFor each of the data flows found in section 5.2 (pages 5-6) of the document:\n1. Create a data flow diagram using OWASP Threat Dragon\n2. Include trust boundaries (as indicated in section 5.1, page 5)\n3. Indicate the threats to each component (as indicated in Affected Components, section 6, table 2, page 7). Each threat must have the following information:\n     - Title (follow the Threat Title in table 2, page 7)\n     - Type (follow the STRIDE Category in table 2, page 7)\n     - Description (follow the Threat Description in table 2, page 7)\n     - Severity - based on the number of mapped vulnerabilities (seen in table 3, page 8), counting the number of checks for each row:\n           - LOW: 0-4 vulnerabilities\n           - MEDIUM: 5-9 vulnerabilities\n           - HIGH: 10-14 vulnerabilities\n           - CRITICAL: 15-19 vulnerabilities",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
